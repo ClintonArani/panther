@@ -1,1 +1,4 @@
-/* You can add global styles to this file, and also import other style files */
+@import "tailwindcss";
+.active-link {
+  @apply text-[#9333ea] border-b-2 border-[#9333ea] pb-1;
+}

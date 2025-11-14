@@ -1,0 +1,83 @@
+<header class="fixed top-0 left-0 right-0 z-50 bg-white shadow-md">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+    
+    <!-- Logo -->
+    <div class="flex items-center space-x-3">
+      <img routerLink="/home" src="assets/logo.png" alt="" class="rounded-full w-10 h-10" (click)="closeMenu()">
+      <span class="text-2xl md:text-xl font-extrabold text-gray-900 lobster-regular tracking-wide">Black Panther</span>
+    </div>
+
+    <!-- Navigation (Desktop) -->
+    <nav class="hidden md:flex space-x-8 font-medium text-gray-700">
+      <a 
+        routerLink="/home" 
+        routerLinkActive="active-link" 
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="hover:text-purple-600 transition-colors duration-300 text-lg md:text-base"
+        (click)="closeMenu()"
+      >
+        Home
+      </a>
+      <a routerLink="/about" routerLinkActive="active-link" 
+         class="hover:text-purple-600 transition-colors duration-300 text-lg md:text-base"
+         (click)="closeMenu()">
+        About
+      </a>
+      <a routerLink="/services" routerLinkActive="active-link" 
+         class="hover:text-purple-600 transition-colors duration-300 text-lg md:text-base"
+         (click)="closeMenu()">
+        Services
+      </a>
+      <a routerLink="/technologies" routerLinkActive="active-link" 
+         class="hover:text-purple-600 transition-colors duration-300 text-lg md:text-base"
+         (click)="closeMenu()">
+        Technologies
+      </a>
+      <a routerLink="/team" routerLinkActive="active-link" 
+         class="hover:text-purple-600 transition-colors duration-300 text-lg md:text-base"
+         (click)="closeMenu()">
+        Team
+      </a>
+      <a routerLink="/blog" routerLinkActive="active-link" 
+         class="hover:text-purple-600 transition-colors duration-300 text-lg md:text-base"
+         (click)="closeMenu()">
+        Blog
+      </a>
+      <a routerLink="/contact" routerLinkActive="active-link" 
+         class="hover:text-purple-600 transition-colors duration-300 text-lg md:text-base"
+         (click)="closeMenu()">
+        Contact
+      </a>
+    </nav>
+
+    <!-- Mobile menu button -->
+    <button class="md:hidden text-2xl text-gray-800" (click)="toggleMenu()">
+      <i class="fas" [ngClass]="isMenuOpen ? 'fa-times' : 'fa-bars'"></i>
+    </button>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div *ngIf="isMenuOpen" class="md:hidden bg-white px-6 py-4 space-y-4 shadow-lg">
+    <a routerLink="/home" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }"
+       class="block text-lg font-medium text-gray-700 hover:text-purple-600 transition-colors duration-300"
+       (click)="closeMenu()">Home</a>
+    <a routerLink="/about" routerLinkActive="active-link"
+       class="block text-lg font-medium text-gray-700 hover:text-purple-600 transition-colors duration-300"
+       (click)="closeMenu()">About</a>
+    <a routerLink="/services" routerLinkActive="active-link"
+       class="block text-lg font-medium text-gray-700 hover:text-purple-600 transition-colors duration-300"
+       (click)="closeMenu()">Services</a>
+    <a routerLink="/technologies" routerLinkActive="active-link"
+       class="block text-lg font-medium text-gray-700 hover:text-purple-600 transition-colors duration-300"
+       (click)="closeMenu()">Technologies</a>
+    <a routerLink="/team" routerLinkActive="active-link"
+       class="block text-lg font-medium text-gray-700 hover:text-purple-600 transition-colors duration-300"
+       (click)="closeMenu()">Team</a>
+    <a routerLink="/blog" routerLinkActive="active-link"
+       class="block text-lg font-medium text-gray-700 hover:text-purple-600 transition-colors duration-300"
+       (click)="closeMenu()">Blog</a>
+    <a routerLink="/contact" routerLinkActive="active-link"
+       class="block text-lg font-medium text-gray-700 hover:text-purple-600 transition-colors duration-300"
+       (click)="closeMenu()">Contact</a>
+  </div>
+</header>
